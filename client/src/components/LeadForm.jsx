@@ -15,7 +15,8 @@ const LeadForm = () => {
     setSuccess('');
     setError('');
     try {
-      const res = await axios.post('http://localhost:5000/api/form', form);
+      const BASE_URL = 'https://growly-client.onrender.com';
+      const res = await axios.post(`${BASE_URL}/api/form`, form);
       setSuccess(res.data.message);
       setForm({ name: '', email: '', phone: '', businessType: '', message: '' });
     } catch (err) {
